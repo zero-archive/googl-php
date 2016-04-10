@@ -1,35 +1,20 @@
-<html>
-<head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-    <title>Google URL Shortener API example</title>
-</head>
-<body>
+<?php
 
-    <?php
+require_once __DIR__ . '/../vendor/autoload.php';
 
-    require_once 'googl.class.php';
+use \dotzero\Googl;
+use \dotzero\GooglException;
 
-    // Example 1.
-    if($link = googl::shorten('http://github.com'))
-    {
-        echo 'Shorten: '.$link.'<br>';
-    }
-    else
-    {
-        echo 'Error: '.googl::getError();
-    }
+try {
+    # GOOGLE_API=ABCDABCDABCDABCDABCDABCDABCDABCDABCDABC php examples/example.php
+    $googl = new Googl(getenv('GOOGLE_API'));
 
-    // Example 2.
-    if($link = googl::expand('http://goo.gl/KkZ8'))
-    {
-        echo 'Expanded: '.$link.'<br>';
-    }
-    else
-    {
-        echo 'Error: '.googl::getError();
-    }
+    $link = $googl->shorten('http://github.com');
+    printf($link . "\n");
 
-    ?>
+    $link = $googl->expand('http://goo.gl/KkZ8');
+    printf($link . "\n");
 
-</body>
-</html>
+} catch (GooglException $e) {
+    printf('Error (%d): %s', $e->getCode(), $e->getMessage());
+}
