@@ -11,7 +11,7 @@ namespace dotzero;
  * @version 0.2
  * @author dotzero <mail@dotzero.ru>
  * @link   http://www.dotzero.ru/
- * @link https://github.com/dotzero/Google-URL-Shortener-Class/
+ * @link https://github.com/dotzero/Googl
  * @link https://developers.google.com/url-shortener/v1/getting_started
  *
  * For the full copyright and license information, please view the LICENSE

@@ -25,6 +25,9 @@ Thumbs.db
 # composer itself is not needed
 composer.phar
 
+# composer.lock is not needed
+composer.lock
+
 # local phpunit config
 /phpunit.xml
 
