@@ -20,10 +20,9 @@ class GooglTest extends PHPUnit_Framework_TestCase
 
     public function testGooglShorten()
     {
-        $expected = 'http://goo.gl/KkZ8';
         $actual = $this->googl->shorten('http://github.com/');
 
-        $this->assertEquals($expected, $actual);
+        $this->assertRegExp("#^http://goo.gl/(\w+)$#", $actual);
     }
 
     public function testGooglExpand()
@@ -34,12 +33,11 @@ class GooglTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    /**
+     * @expectedException dotzero\GooglException
+     */
     public function testGooglException()
     {
-        try {
-            $this->googl->expand('foobar');
-        } catch (GooglException $e) {
-            $this->assertInstanceOf('dotzero\GooglException', $e);
-        }
+        $this->googl->expand('foobar');
     }
 }
