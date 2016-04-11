@@ -1,6 +1,8 @@
 # PHP Googl
 
 [![Build Status](https://travis-ci.org/dotzero/googl-php.svg?branch=master)](https://travis-ci.org/dotzero/googl-php)
+[![Latest Stable Version](https://poser.pugx.org/dotzero/googl/version)](https://packagist.org/packages/dotzero/googl)
+[![License](https://poser.pugx.org/dotzero/googl/license)](https://packagist.org/packages/dotzero/googl)
 
 A PHP5 library to generate shortened URL through The Google URL Shortener API.
 
