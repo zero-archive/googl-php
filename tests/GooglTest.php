@@ -22,13 +22,13 @@ class GooglTest extends PHPUnit_Framework_TestCase
     {
         $actual = $this->googl->shorten('http://github.com/');
 
-        $this->assertRegExp("#^http://goo.gl/(\w+)$#", $actual);
+        $this->assertRegExp("#^https://goo.gl/(\w+)$#", $actual);
     }
 
     public function testGooglExpand()
     {
         $expected = 'http://github.com/';
-        $actual = $this->googl->expand('http://goo.gl/KkZ8');
+        $actual = $this->googl->expand('https://goo.gl/KkZ8');
 
         $this->assertEquals($expected, $actual);
     }
